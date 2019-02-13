@@ -12,7 +12,7 @@ public class TotalCountCommand extends Command {
             + ": Displays the total number of people in the Address Book.\n"
             + "Example: " + COMMAND_WORD;
 
-    public static final String MESSAGE_SUCCESS = "Contacts found";
+    public static final String MESSAGE_SUCCESS = " Contacts found ";
 
 
     @Override

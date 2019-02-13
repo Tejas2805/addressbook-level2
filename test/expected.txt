@@ -297,7 +297,14 @@
 || 
 || 0 persons listed!
 || ===================================================
-|| Enter command: || [Command entered:  exit]
+|| Enter command: || [Command entered:total]
+|| 1 Contacts found
+|| ===================================================
+|| Enter command: || [Command entered:topTen]
+||
+|| 0 persons listed!
+|| ===================================================
+|| Enter command: [Command entered:  exit]
 || Exiting Address Book as requested ...
 || ===================================================
 || Good bye!
