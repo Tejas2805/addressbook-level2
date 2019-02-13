@@ -20,10 +20,12 @@ import seedu.addressbook.commands.FindCommand;
 import seedu.addressbook.commands.HelpCommand;
 import seedu.addressbook.commands.IncorrectCommand;
 import seedu.addressbook.commands.ListCommand;
+import seedu.addressbook.commands.TotalCountCommand;
+import seedu.addressbook.commands.TopTenCommand;
 import seedu.addressbook.commands.ViewAllCommand;
 import seedu.addressbook.commands.ViewCommand;
 import seedu.addressbook.data.exception.IllegalValueException;
-
+import seedu.addressbook.commands.*;
 /**
  * Parses user input.
  */
@@ -90,6 +92,12 @@ public class Parser {
 
         case ViewCommand.COMMAND_WORD:
             return prepareView(arguments);
+
+            case TotalCountCommand.COMMAND_WORD:
+                return new TotalCountCommand();
+
+            case TopTenCommand.COMMAND_WORD:
+                return new TopTenCommand();
 
         case ViewAllCommand.COMMAND_WORD:
             return prepareViewAll(arguments);

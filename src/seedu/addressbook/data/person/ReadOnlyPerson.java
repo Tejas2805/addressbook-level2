@@ -3,7 +3,10 @@ package seedu.addressbook.data.person;
 import java.util.Set;
 
 import seedu.addressbook.data.tag.Tag;
-
+import seedu.addressbook.data.person.Email;
+import seedu.addressbook.data.person.Phone;
+import seedu.addressbook.data.person.Name;
+import seedu.addressbook.data.person.Address;
 /**
  * A read-only immutable interface for a Person in the addressbook.
  * Implementations should guarantee: details are present and not null, field values are validated.
@@ -22,13 +25,18 @@ public interface ReadOnlyPerson {
     Set<Tag> getTags();
 
     /**
-     * Returns true if both persons have the same identity fields (name and telephone).
+     * Returns true if both persons have the same identity fields (name and telephone and/or email).
+     * Returns true if a different person has same telephone and email
      */
     default boolean isSamePerson(ReadOnlyPerson other) {
         return (other == this)
                 || (other != null
-                    && other.getName().equals(this.getName())
-                    && other.getPhone().equals(this.getPhone()));
+                    && other.getPhone().equals(this.getPhone())
+                    && other.getEmail().equals(this.getEmail()))
+                    || (other.getName().equals(this.getName())
+                    && (other.getPhone().equals(this.getPhone())
+                    || other.getEmail().equals(this.getEmail())));
+
     }
 
     /**

@@ -15,6 +15,7 @@ import org.junit.Test;
 import seedu.addressbook.commands.AddCommand;
 import seedu.addressbook.commands.ClearCommand;
 import seedu.addressbook.commands.Command;
+import seedu.addressbook.commands.TopTenCommand;
 import seedu.addressbook.commands.DeleteCommand;
 import seedu.addressbook.commands.ExitCommand;
 import seedu.addressbook.commands.FindCommand;
@@ -23,6 +24,7 @@ import seedu.addressbook.commands.IncorrectCommand;
 import seedu.addressbook.commands.ListCommand;
 import seedu.addressbook.commands.ViewAllCommand;
 import seedu.addressbook.commands.ViewCommand;
+import seedu.addressbook.commands.TotalCountCommand;
 import seedu.addressbook.data.exception.IllegalValueException;
 import seedu.addressbook.data.person.Address;
 import seedu.addressbook.data.person.Email;
@@ -81,6 +83,11 @@ public class ParserTest {
         parseAndAssertCommandType(input, ListCommand.class);
     }
 
+    @Test
+    public void parse_topTenCommand_parsedCorrectly() {
+        final String input = "topTen";
+        parseAndAssertCommandType(input, TopTenCommand.class);
+    }
     @Test
     public void parse_exitCommand_parsedCorrectly() {
         final String input = "exit";

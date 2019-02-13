@@ -72,6 +72,15 @@ public class UniquePersonList implements Iterable<Person> {
         internalList.addAll(source.internalList);
     }
 
+
+    /**
+     *  Gets total count of contants
+     */
+
+    public int total(){
+        return internalList.size();
+    }
+
     /**
      * Returns an unmodifiable java List view with elements cast as immutable {@link ReadOnlyPerson}s.
      * For use with other methods/libraries.
